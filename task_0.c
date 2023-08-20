@@ -36,7 +36,7 @@ int _printf(const char *format, ...)
 				strr = va_arg(args, char *);
 				while (*strr)
 				{
-					printf(*strr);
+					putchar(*strr);
 					strr++;
 					chars++;
 				}
