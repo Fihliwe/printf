@@ -11,7 +11,6 @@ int convert_spec_1(const char *format, ...)
 	va_list args;
 	int chars = 0;
 	int x;
-	int y;
 	int z;
 	char *strr;
 
@@ -35,8 +34,8 @@ int convert_spec_1(const char *format, ...)
 
 			else if (*format == 'i')
 			{
-				y = va_arg(args, int);
-				putchar(y);
+				x = va_arg(args, int);
+				putchar(x);
 				chars++;
 			}
 
