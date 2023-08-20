@@ -26,7 +26,7 @@ int convert_spec_1(const char *format, ...)
 			if (*format == 'd')
 			{
 				x = va_arg(args, char *);
-				while (*x);
+				while (*x)
 				{
 					putchar(*x);
 					x++;
