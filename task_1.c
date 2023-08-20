@@ -23,12 +23,19 @@ int convert_spec_1(const char *format, ...)
 			if (*format == '\0')
 				break;
 
-			if (*format == 'd' || *format == 'i')
+			if (*format == 'd')
 			{
 				x = va_arg(args, int);
 				putchar(x);
 				chars++;
 			}
+
+			if (*format == 'i')
+                        {
+                                x = va_arg(args, int);
+                                putchar(x);
+                                chars++;
+                        }
 
 			else if (*format == '%')
 			{
