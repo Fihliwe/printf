@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	char x;
 	char *strr;
 
-	va_start(args, *format);
+	va_start(args, format);
 
 	while (*format)
 	{
