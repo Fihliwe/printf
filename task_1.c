@@ -12,6 +12,8 @@ int convert_spec_1(const char *format, ...)
 	int chars = 0;
 	int x;
 	int y;
+	int z;
+	char *strr;
 
 	va_start(args, *format);
 
@@ -36,6 +38,24 @@ int convert_spec_1(const char *format, ...)
 				y = va_arg(args, int);
 				putchar(y);
 				chars++;
+			}
+
+			else if (*format == 'c')
+			{
+				z = va_arg(args, int);
+				putchar(z);
+				chars++;
+			}
+
+			else if (*format == 's')
+			{
+				strr = va_arg(args, char *);
+				while (*strr);
+				{
+					putchar(*strr);
+					strr++;
+					chars++;
+				}
 			}
 
 			else if (*format == '%')
