@@ -1,11 +1,16 @@
+#include "main.h"
+/**
+ * convert_spec_1 - function for conversion specifier
+ * @format: character string
+ * Return: characters
+ */
+
 int convert_spec_1(const char *format, ...)
 {
 	va_list args;
 	int chars = 0;
 	int x;
 	int y;
-	int z;
-	char *strr;
 
 	va_start(args, format);
 
