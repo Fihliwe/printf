@@ -26,14 +26,14 @@ int convert_spec_1(const char *format, ...)
 			if (*format == 'd')
 			{
 				x = va_arg(args, int);
-				putchar(x);
+				printf("%d", x);
 				chars++;
 			}
 
 			else if (*format == 'i')
                         {
                                 y = va_arg(args, int);
-                                putchar(y);
+                                printf("%i", y);
                                 chars++;
                         }
 
