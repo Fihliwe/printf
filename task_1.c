@@ -9,8 +9,8 @@ int convert_spec_1(const char *format, ...)
 {
 	va_list args;
 	int chars = 0;
-	int x;
-	int y;
+	char *x;
+	char *y;
 
 	va_start(args, format);
 
@@ -25,16 +25,24 @@ int convert_spec_1(const char *format, ...)
 
 			if (*format == 'd')
 			{
-				x = va_arg(args, int);
-				printf("%d", x);
-				chars++;
+				x = va_arg(args, char *);
+				while (*x);
+				{
+					putchar(*x);
+					x++;
+					chars++;
+				}
 			}
 
 			else if (*format == 'i')
                         {
-                                y = va_arg(args, int);
-                                printf("%i", y);
-                                chars++;
+                                y = va_arg(args, char *);
+				while (*y)
+				{
+					putchar(*y);
+					y++;
+					chars++;
+				}
                         }
 
 			else if (*format == '%')
