@@ -30,7 +30,7 @@ int convert_spec_1(const char *format, ...)
 				chars++;
 			}
 
-			if (*format == 'i')
+			else if (*format == 'i')
                         {
                                 x = va_arg(args, int);
                                 putchar(x);
