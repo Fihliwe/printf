@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 			{
 				x = va_arg(args, int);
 				printf("%d", x);
-				chars += print(NULL, 0, "%d", x);
+				chars += printf(NULL, 0, "%d", x);
 			}
 
 
