@@ -36,6 +36,11 @@ int _printf(const char *format, ...)
 				}
 			}
 
+			else if 
+			{
+				convert_spec_1(chars);
+			}
+
 			else if (*format == '%')
 			{
 				putchar('%');
