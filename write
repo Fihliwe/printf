@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <unistd.h>
+
+/**
+ * This program demonstrates the use of conversion specifiers for unsigned integers.
+ * It prints values using the 'u', 'o', 'x', and 'X' specifiers.
+ *
+ * @return 0 on successful execution.
+ */
+int main(void) {
+
+	unsigned int u_value = 42;
+	unsigned int o_value = 42;
+	unsigned int x_value = 42;
+
+	char buffer[1024];
+
+
+	int u_length = snprintf(buffer, sizeof(buffer), "Unsigned Decimal (u): %u\n", u_value);
+	write(STDOUT_FILENO, buffer, u_length);
+
+ 	int o_length = snprintf(buffer, sizeof(buffer), "Octal (o): %o\n", o_value);
+	write(STDOUT_FILENO, buffer, o_length);
+	int x_length = snprintf(buffer, sizeof(buffer), "Lowercase Hexadecimal (x): %x\n", x_value);
+	write(STDOUT_FILENO, buffer, x_length);
+
+	int X_length = snprintf(buffer, sizeof(buffer), "Uppercase Hexadecimal (X): %X\n", x_value);
+	write(STDOUT_FILENO, buffer, X_length);
+
+	return 0;
+}
+
