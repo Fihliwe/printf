@@ -5,7 +5,7 @@
  * Return: characters
  */
 
-int convert_spec_1(const char *format, ...)
+int _printf(const char *format, ...)
 {
 	va_list args;
 	int chars = 0;
