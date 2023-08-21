@@ -10,7 +10,6 @@ int convert_spec_1(const char *format, ...)
 	va_list args;
 	int chars = 0;
 	int x;
-	int y;
 
 	va_start(args, format);
 
@@ -25,8 +24,9 @@ int convert_spec_1(const char *format, ...)
 
 			if (*format == 'd' || *format == 'i')
 			{
-				printf("%d%i", x, y);
-				chars++;
+				x = va_arg(args, int);
+				printf("%d", x);
+				chars += print(NULL, 0, "%d", x);
 			}
 
 
