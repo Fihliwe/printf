@@ -6,6 +6,7 @@ int _printf(const char *format, ...)
 	int chars = 0;
 	char x;
 	char *strr;
+	int z;
 
 	va_start(args, format);
 
@@ -36,9 +37,11 @@ int _printf(const char *format, ...)
 				}
 			}
 
-			else if 
+			else if (*format == 'd' || *format == 'i')
 			{
-				convert_spec_1(chars);
+				 z = va_arg(args, int);
+                		 printf("%d", z);
+                		 chars += printf(NULL, 0, "%d", z);
 			}
 
 			else if (*format == '%')
