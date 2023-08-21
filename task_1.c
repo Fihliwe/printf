@@ -16,6 +16,7 @@ int convert_spec_1(const char *format, ...)
 
 	while (*format)
 	{
+
 		if (*format == '%')
 		{
 			format++;
@@ -23,20 +24,20 @@ int convert_spec_1(const char *format, ...)
 			if (*format == '\0')
 				break;
 
-			/*if (*format == 'd')
+			if (*format == 'd')
 			{
 				x = va_arg(args, int);
 				printf("%d", x);
-				chars += printf(NULL, 0, "%d", x);
+				chars++;
 			}
 
 			else if (*format == 'i')
-			{
-				y = va_arg(args, int);
-                                printf("%i", y);
-                                chars += printf(NULL, 0, "%i", y);
-			}*/
 
+            {
+                    y = va_arg(args, int);
+                    printf("%i", y);
+                    chars++;
+            }
 
 			else if (*format == '%')
 			{
