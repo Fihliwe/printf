@@ -1,0 +1,43 @@
+#include <stdarg.h>
+#include <stdio.h>
+#include <unistd.h>
+
+/**
+ * This function prints a string with custom conversion specifier %S.
+ * Non-printable characters are printed as \x, followed by the ASCII code value in hexadecimal (uppercase - always 2 characters).
+ *
+ * @param format The format string.
+ * @param ... Additional arguments.
+ * @return The number of characters printed.
+ */
+int _printf(const char *format, ...) {
+    va_list args;
+    va_start(args, format);
+
+    int printed = 0;
+
+    while (*format) {
+        if (*format == '%' && *(format + 1) == 'S') {
+            format += 2; // Move past %S
+            char *str = va_arg(args, char *);
+            while (*str) {
+                if (*str < 32 || *str >= 127) {
+                    // Print non-printable characters as \xXX
+                    printed += write(STDOUT_FILENO, "\\x", 2);
+                    // Print the ASCII code value in hexadecimal
+                    printed += printf("%02X", *str);
+                } else {
+                    printed += write(STDOUT_FILENO, str, 1);
+                }
+                str++;
+            }
+        } else {
+            printed += write(STDOUT_FILENO, format, 1);
+            format++;
+        }
+    }
+
+    va_end(args);
+    return printed;
+}
+
