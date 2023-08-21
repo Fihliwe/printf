@@ -1,0 +1,23 @@
+#include "main.h"
+
+/**
+*Main function of the  use of conversion specifiers.
+*@retur:n 0 (successful execution)
+*/
+
+int main() {
+	unsigned int u_value = 42;
+	unsigned int o_value = 42;
+	unsigned int x_value = 42;
+
+	printf("Unsigned Decimal (u): %u\n", u_value)
+
+	printf("Octal (o): %o\n", o_value);
+
+	printf("Lowercase Hexadecimal (x): %x\n", x_value);
+
+	printf("Uppercase Hexadecimal (X): %X\n", x_value);
+
+	return 0;
+}
+
