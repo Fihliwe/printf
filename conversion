@@ -1,8 +1,9 @@
 #include "main.h"
 
 /**
-*Main function of the  use of conversion specifiers.
-*@retur:n 0 (successful execution)
+*Custom printf function that handles specific conversion specifiers.
+*@param format A format string containing conversion specifiers.
+*@return The number of characters printed.
 */
 
 int main() {

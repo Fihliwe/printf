@@ -4,6 +4,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
+#include "main.h"
 
 int _printf(const char *format, ...);
 int convert_spec_1(const char *format, ...);
