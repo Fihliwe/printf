@@ -6,7 +6,7 @@
  * Return: character.
  */
 
-int _printf(const char *format, ...)
+int convert_spec_1(const char *format, ...)
 {
 	int _printf(const char *format, ...)
 {
