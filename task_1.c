@@ -28,8 +28,8 @@ int _printf(const char *format, ...)
 			if (*format == 'd' )
 			{
 				x = va_arg(args, int);
-                printf("%d", x);
-                chars += printf(NULL, 0, "%d", x);
+		                printf("%d", x);
+                		chars += printf(NULL, 0, "%d", x);
 			}
 
 			else if (*format == 'i')
