@@ -6,12 +6,12 @@
  * Return: character.
  */
 
-int convert_spec_1(const char *format, ...)
+int _printf(const char *format, ...)
 {
 	va_list args;
 	int chars = 0;
-	int x;
-	int y;
+	char x;
+	char *strr;
 
 	va_start(args, format);
 
@@ -24,20 +24,24 @@ int convert_spec_1(const char *format, ...)
 			if (*format == '\0')
 				break;
 
-			if (*format == 'd')
+			if (*format == 'c')
 			{
-				x = va_arg(args, int);
+				x = (char)va_arg(args, int);
 				putchar(x);
 				chars++;
 			}
 
-			else if (*format == 'i')
-                        {
-                                y = va_arg(args, int);
-                                putchar(y);
-                                chars++;
-                        }
-			
+			else if (*format == 's')
+			{
+				strr = va_arg(args, char *);
+				while (*strr)
+				{
+					putchar(*strr);
+					strr++;
+					chars++;
+				}
+			}
+
 			else if (*format == '%')
 			{
 				putchar('%');
