@@ -66,7 +66,6 @@ int _printf(const char *format, ...)
 		}
 
 		format++;
-		chars++;
 
 	}
 
