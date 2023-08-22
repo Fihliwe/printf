@@ -5,12 +5,13 @@
  * 
 */
 
-int convert_binary(const char *format, ...)
+int convert_hex(const char *format, ...)
 {
     va_list args;
     int chars = 0;
-    unsigned int z;
-   
+    unsigned int ui;
+    
+
     va_start(args, format);
 
     while (*format)
@@ -21,13 +22,22 @@ int convert_binary(const char *format, ...)
 
             if (*format == '\0')
                 break;
-            
-            else if (*format == 'b')
+            else if (*format == 'u')
             {
-                z = va_arg(args, int);
-                chars += printf("%d", z);
+                ui = va_arg(args, unsigned int);
+                chars += printf("%u", ui);
             }
-             else if (*format == '%')
+            else if (*format == 'o')
+            {
+                ui = va_arg(args, unsigned int);
+                chars += printf("%o", ui);
+            }
+            else if (*format == 'x' || *format == 'X')
+            {
+                ui = va_arg(args, unsigned int);
+                chars += printf((*format == 'x') ? "%x" : "%X", ui);
+            }
+            else if (*format == '%')
             {
                 putchar('%');
                 chars++;
