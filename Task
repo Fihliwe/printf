@@ -5,12 +5,11 @@
  * 
 */
 
-int convert_hex(const char *format, ...)
+int convert_point(const char *format, ...)
 {
     va_list args;
     int chars = 0;
-    unsigned int ui;
-    
+    void *addr;
 
     va_start(args, format);
 
@@ -22,22 +21,14 @@ int convert_hex(const char *format, ...)
 
             if (*format == '\0')
                 break;
-            else if (*format == 'u')
+            
+             else if (*format == 'p')
             {
-                ui = va_arg(args, unsigned int);
-                chars += printf("%u", ui);
+                addr = va_arg(args, void *);
+                chars += printf("%p", addr);
             }
-            else if (*format == 'o')
-            {
-                ui = va_arg(args, unsigned int);
-                chars += printf("%o", ui);
-            }
-            else if (*format == 'x' || *format == 'X')
-            {
-                ui = va_arg(args, unsigned int);
-                chars += printf((*format == 'x') ? "%x" : "%X", ui);
-            }
-            else if (*format == '%')
+
+             else if (*format == '%')
             {
                 putchar('%');
                 chars++;
