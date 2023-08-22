@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			return (-1);
+			printf("% ");
 
 			if (*format == '\0')
 				break;
