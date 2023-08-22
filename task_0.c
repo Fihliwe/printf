@@ -42,12 +42,6 @@ int _printf(const char *format, ...)
 				 z = va_arg(args, int);
                 		 printf("%d", z);
 			
-				 if (z < 0)
-                		 {
-                    			putchar(' ');
-                    			chars++;
-                		 }
-
 			}
 
 			else if (*format == '%')
