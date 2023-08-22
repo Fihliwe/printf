@@ -6,7 +6,7 @@
  */
 void convert_unknown(const char specifier, int *chars)
 {
-	putchar('%');
-	putchar(specifier);
-	*chars += 2;
+        putchar('%');
+        putchar(specifier);
+        *chars += 2;
 }

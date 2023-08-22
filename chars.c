@@ -7,9 +7,9 @@
 
 void convert_char(va_list args, int *chars)
 {
-	char i;
-	i = (char)va_arg(args, int);
+        char i;
+        i = (char)va_arg(args, int);
 
-	putchar(i);
-	(*chars)++;
+        putchar(i);
+        (*chars)++;
 }

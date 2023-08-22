@@ -1,13 +1,13 @@
 #include"main.h"
 /**
- * convert_octal - function for octal
- * @args: arguments
- * @chars: pointer 
+ * handle_octal - handle the o specifier
+ * @args: va_list of arguments
+ * @count: pointer to character
  */
 void convert_octal(va_list args, int *chars)
 {
 	unsigned int z = va_arg(args, unsigned int);
-	int j, i, num = 0;
+	int j, i, x = 0;
 	unsigned int num = z;
 	char digit[12];
 
@@ -19,17 +19,17 @@ void convert_octal(va_list args, int *chars)
 	}
 	while (num != 0)
 	{
-		num = num / 8;
-		num++;
+		num /= 8;
+		x++;
 	}
-	j = num - 1;
+	j = x - 1;
 	num = z;
 	do {
 		digit[j] = num % 8 + '0';
-		num = num / 8;
+		num /= 8;
 		j--;
 	} while (num != 0);
-	for (i = 0; i < num; i++)
+	for (i = 0; i < x; i++)
 	{
 		putchar(digit[i]);
 		(*chars)++;

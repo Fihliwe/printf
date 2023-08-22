@@ -5,6 +5,6 @@
  */
 void convert_percent(int *chars)
 {
-	putchar('%');
-	(*chars)++;
+        putchar('%');
+        (*chars)++;
 }
