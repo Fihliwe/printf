@@ -1,18 +1,17 @@
 #include "main.h"
 /**
- * _printf - function
- * @format: character string.
- * Return: chars
+ * _printf - function for printf
+ * @format: format.
+ * Return: count.
  */
 
 int _printf(const char *format, ...)
 {
 	va_list args;
 	int chars = 0;
-	char x;
-	char *strr;
-	int z;
 
+	if (format == NULL)
+		return (-1);
 	va_start(args, format);
 
 	while (*format)
@@ -24,46 +23,36 @@ int _printf(const char *format, ...)
 			if (*format == '\0')
 				break;
 
+			if (*format == ' ')
+				return (-1);
+
 			if (*format == 'c')
-			{
-				x = va_arg(args, int);
-				putchar(x);
-				chars++;
-			}
+				convert_char(args, &chars);
 
 			else if (*format == 's')
-			{
-				strr = va_arg(args, char *);
-				while (*strr)
-				{
-					putchar(*strr);
-					strr++;
-					chars++;
-				}
-			}
-
-			else if (*format == 'd' || *format == 'i')
-			{
-				 z = va_arg(args, int);
-                		 printf("%d", z);
-			
-			}
+				convert_string(args, &chars);
 
 			else if (*format == '%')
-			{
-				putchar('%');
-				chars++;
-			}
+				convert_percent(&chars);
+
+			else if (*format == 'd' || *format == 'i')
+				convert_decimal(args, &chars);
+
+			else if (*format == 'b')
+				convert_binary(args, &chars);
+
+			else if (*format == 'u')
+				convert_unsigned(args, &chars);
+
+			else if (*format == 'o')
+				convert_octal(args, &chars);
+
+			else if (*format == 'x' || *format == 'X')
+				convert_hex(args, &chars, (*format == 'X') ? 1 : 0);
 
 			else
-			{
-				putchar('%');
-				putchar(*format);
-				chars += 2;
-			}
-
+				convert_unknown(*format, &chars);
 		}
-
 		else
 		{
 			putchar(*format);
@@ -71,11 +60,9 @@ int _printf(const char *format, ...)
 		}
 
 		format++;
-
 	}
 
 	va_end(args);
 
 	return (chars);
-
 }

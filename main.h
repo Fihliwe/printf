@@ -1,20 +1,18 @@
 #ifndef MAIN_H
 #define MAIN_H
-#define BUFFER_SIZE 1024
+#include<stdio.h>
+#include<stdlib.h>
+#include<stdarg.h>
 
-#include <stdarg.h>
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
-
-
-
+void convert_decimal(va_list args, int *count);
+void convert_unknown(const char modifier, int *count);
+void convert_percent(int *count);
+void convert_string(va_list args, int *count);
+void convert_char(va_list args, int *count);
+void convert_binary(va_list args, int *count);
+void convert_unsigned(va_list args, int *count);
+void convert_octal(va_list args, int *count);
+void convert_hex(va_list args, int *count, int uppercase);
 int _printf(const char *format, ...);
-int convert_int(const char *format, ...);
-int convert_hex(const char *format, ...);
-int convert_point(const char *format, ...);
-int convert_binary(const char *format, ...);
-int convert_short(const char *format, ...);
-
 
 #endif
