@@ -41,11 +41,10 @@ int _printf(const char *format, ...)
 			{
 				 z = va_arg(args, int);
                 		 printf("%d", z);
-                		 chars += printf(NULL, 0, "%d", z);
 			
 				 if (z < 0)
                 		 {
-                    			putchar(' ');
+                    			putchar(" ");
                     			chars++;
                 		 }
 
