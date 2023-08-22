@@ -44,7 +44,7 @@ int _printf(const char *format, ...)
 			
 				 if (z < 0)
                 		 {
-                    			putchar(" ");
+                    			putchar(' ');
                     			chars++;
                 		 }
 
