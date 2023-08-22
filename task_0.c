@@ -62,7 +62,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			putchar(*format);
-			chars++;
+			/*chars++;*/
 		}
 
 		format++;
@@ -71,6 +71,6 @@ int _printf(const char *format, ...)
 
 	va_end(args);
 
-	return (chars);
+	return (0);
 
 }
