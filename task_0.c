@@ -62,10 +62,11 @@ int _printf(const char *format, ...)
 		else
 		{
 			putchar(*format);
-			/*chars++;*/
+			chars++;
 		}
 
 		format++;
+		chars++;
 
 	}
 
