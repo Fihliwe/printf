@@ -37,7 +37,7 @@ void convert_decimal(va_list args, int *chars)
 	} 
 	while (num != 0);
 	
-	for (i = num_digits - z - 1; i < num_digits; i++)
+	for (i = 0; i <= num_digits; i++)
 	{
 		putchar(digit[i]);
 		(*chars)++;
