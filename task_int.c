@@ -42,4 +42,5 @@ void convert_decimal(va_list args, int *chars)
 		putchar(digit[i]);
 		(*chars)++;
 	}
+	num_digits++;
 }
