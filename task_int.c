@@ -33,7 +33,7 @@ void convert_decimal(va_list args, int *chars)
 	do {
 		digit[z] = num % 10 + '0';
 		num /= 10;
-		z++;
+		z--;
 	} 
 	while (num != 0);
 	
