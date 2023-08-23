@@ -20,6 +20,7 @@ void convert_decimal(va_list args, int *chars)
 	}
 	if (j < 0)
 	{
+		num_digits++;
 		putchar('-');
 		num = -j;
 	}
