@@ -23,7 +23,7 @@ void convert_decimal(va_list args, int *chars)
 		putchar('-');
 		num = -j;
 	}
-	while (num != 0)
+	while (num > 0)
 	{
 		num /= 10;
 		num_digits++;
