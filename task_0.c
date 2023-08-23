@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
 			else if (*format == '%')
 				convert_percent(&chars);
 
-			else if (*format == 'd' || *format == 'i')
+			else if (*format == 'd')
 				convert_decimal(args, &chars);
 
 			else if (*format == 'b')
