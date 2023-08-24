@@ -35,12 +35,12 @@ void convert_address(va_list args, int *chars)
 	for (i = 0; i < num; i++)
 	{
 		digit = (address >> (4 * i)) & 0xF;
-		digit[num - i - 1] = (digit < 10) ?
+		digits[num - i - 1] = (digit < 10) ?
 			(digit + '0') : (digit - 10 + 'a');
 	}
 	for (i = 0; i < num; i++)
 	{
-		putchar(digit[i]);
+		putchar(digits[i]);
 		(*chars)++;
 	}
 }
