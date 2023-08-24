@@ -49,6 +49,9 @@ int _printf(const char *format, ...)
 
 			else if (*format == 'x' || *format == 'X')
 				convert_hex(args, &chars, (*format == 'X') ? 1 : 0);
+			
+			else if (*format == 'p')
+				convert_address(args, &chars);
 
 			else
 				convert_unknown(*format, &chars);
