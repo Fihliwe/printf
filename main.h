@@ -14,5 +14,6 @@ void convert_octal(va_list args, int *count);
 void convert_hex(va_list args, int *count, int uppercase);
 int _printf(const char *format, ...);
 void convert_binary(va_list args, int *count);
+void convert_address(va_list args, int *count);
 
 #endif
